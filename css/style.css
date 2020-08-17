@@ -65,7 +65,8 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  padding: 5vw; }
+  padding: 5vw;
+  overflow: hidden; }
 
 .textbox {
   width: 40%; }
