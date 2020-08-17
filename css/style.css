@@ -12,14 +12,12 @@
     height: 50%;
     width: 20%;
     padding: 1rem;
-    overflow: hidden;
-    overflow-y: scroll;
+    overflow-x: hidden;
     transition: all 0.5s ease-in-out; }
-    .colorboxes__colorbox__main {
-      padding: 1rem;
-      background-color: pink;
-      opacity: 0;
-      transition: all 1s ease-in-out; }
+    .colorboxes__colorbox i {
+      position: absolute;
+      font-size: 30px;
+      color: white; }
     .colorboxes__colorbox p {
       display: inline-block;
       opacity: 0;
@@ -44,9 +42,6 @@
       background-color: #073b4c;
       transition: all 0.5s ease-in-out; }
 
-.colorboxes__colorbox__show {
-  opacity: 1; }
-
 @media only screen and (min-width: 600px) {
   .colorboxes:hover {
     height: 40vh;
@@ -67,7 +62,7 @@
 @media only screen and (max-width: 599px) {
   .colorboxes {
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -79,9 +74,42 @@
       height: 100%;
       width: 20%;
       padding: 1rem;
-      overflow: hidden; }
-      .colorboxes__colorbox P {
-        display: none; } }
+      overflow: hidden; } }
+
+.page {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  transition: opacity 1s ease; }
+  .page i {
+    font-size: 0px; }
+
+.showpage {
+  z-index: 10000000000;
+  opacity: 1;
+  padding: 1rem;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.9); }
+  .showpage i {
+    font-size: 40px;
+    color: #0c0c0c;
+    position: absolute;
+    top: 1rem;
+    left: 2rem; }
+
+.hidepage {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  transition: opacity 1s ease; }
+  .hidepage i {
+    font-size: 0px; }
 
 * {
   margin: 0;
@@ -96,11 +124,11 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  padding: 5vw;
   overflow: hidden; }
 
 .textbox {
-  width: 40%; }
+  width: 40%;
+  padding: 3rem; }
   .textbox h5 {
     font-size: 28px;
     font-weight: 200;
@@ -114,10 +142,18 @@ body {
       cursor: pointer;
       color: #ef476f; }
 
-@media only screen and (max-width: 699px) {
+@media only screen and (max-width: 800px) {
   .textbox {
     width: 60%; }
     .textbox h5 {
-      font-size: 20px; }
+      font-size: 24px; }
     .textbox p {
-      font-size: 14px; } }
+      font-size: 16px; } }
+
+@media only screen and (max-width: 500px) {
+  .textbox {
+    width: 80%; }
+    .textbox h5 {
+      font-size: 18px; }
+    .textbox p {
+      font-size: 12px; } }
